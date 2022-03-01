@@ -1,0 +1,25 @@
+* {
+  font-family: "Open Sans", sans-serif;
+  /* font-family: "Comforter", cursive; */
+  /* font-family: "Ubuntu", sans-serif; */
+  /* font-family: "Poppins", sans-serif; */
+  list-style: none;
+  text-decoration: none;
+}
+
+.boton {
+  border: none;
+  background-color: transparent;
+  font-size: 25px;
+  color: #bbb6b6;
+}
+
+.botonfondoTransparante {
+  background-color: transparent;
+  border: 1px solid white;
+  padding: 8px 10px;
+}
+
+.cambiarcolores li:nth-child(odd) {
+  background-color: #51c9ff;
+}
