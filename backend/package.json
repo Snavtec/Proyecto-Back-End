@@ -13,7 +13,7 @@
     "express",
     "nodejs"
   ],
-  "author": "eduardo de rivero",
+  "author": "Samuel Navarro",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.0.1",
