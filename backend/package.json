@@ -1,7 +1,7 @@
 {
-  "name": "backend-tareas",
+  "name": "backend-gamer",
   "version": "1.0.0",
-  "description": "backend de un proyecto de tareas con estado",
+  "description": "backend de un ecommers gamer",
   "main": "index.js",
   "type": "module",
   "scripts": {
