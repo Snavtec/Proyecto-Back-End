@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Button, Form } from "react-bootstrap";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { createAccount, login, getUserProfile } from "../service/authService";
+import { AuthContext } from "../context/authContext";
+
 function CrearCuentaView() {
   const {
     register,
@@ -9,8 +12,32 @@ function CrearCuentaView() {
     formState: { errors },
   } = useForm();
 
-  const recibirSubmit = (data) => {
+  const navigate = useNavigate();
+
+  const { customSignIn } = useContext(AuthContext);
+
+  const recibirSubmit = async (data) => {
     console.log(data);
+    try {
+      let res = await createAccount(data);
+      // check if response is ok
+      console.log("response from account creation", res);
+      let creds = await login({
+        email: data.email,
+        password: data.password,
+      });
+      console.log("user tokens", creds);
+      // Save tokens to localStorage
+      localStorage.setItem("accessToken", creds.access);
+      localStorage.setItem("refreshToken", creds.refresh);
+      // get user profile and set it to context
+      const user = await getUserProfile();
+      await customSignIn(user);
+      // redirect to products
+      navigate("/productosfiltros");
+    } catch (e) {
+      console.log("error", e);
+    }
   };
   return (
     <>
@@ -27,9 +54,9 @@ function CrearCuentaView() {
                 <Form.Control
                   type="text"
                   placeholder="Ingrese un nombre"
-                  {...register("nombre", { required: true })}
+                  {...register("first_name", { required: true })}
                 />
-                {errors.nombre && (
+                {errors.first_name && (
                   <small className="text-danger">
                     Este Campo es obligatorio
                   </small>
@@ -41,9 +68,9 @@ function CrearCuentaView() {
                 <Form.Control
                   type="text"
                   placeholder="Ingrese Nombre"
-                  {...register("apellido", { required: true })}
+                  {...register("last_name", { required: true })}
                 />
-                {errors.apellido && (
+                {errors.last_name && (
                   <small className="text-danger">
                     Este Campo es obligatorio
                   </small>
@@ -55,9 +82,9 @@ function CrearCuentaView() {
                 <Form.Control
                   type="email"
                   placeholder="Ingrese Correo electronico"
-                  {...register("correo", { required: true })}
+                  {...register("email", { required: true })}
                 />
-                {errors.correo && (
+                {errors.email && (
                   <small className="text-danger">
                     Este Campo es obligatorio
                   </small>

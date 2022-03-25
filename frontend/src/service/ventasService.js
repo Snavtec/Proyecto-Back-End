@@ -1,13 +1,8 @@
-import axios from "axios";
-
-const URL = `${process.env.REACT_APP_WEBSITE_NAME}ventas`;
+import { AUTH_URL } from "./axiosService";
 
 const guardarVenta = async (nuevaVenta) => {
   try {
-    const headers = {
-      "Content-Type": "application/json",
-    };
-    const { data } = await axios.post(URL, nuevaVenta, { headers });
+    const { data } = await AUTH_URL.post("ventas/", nuevaVenta);
     return data;
   } catch (error) {
     console.log(error);

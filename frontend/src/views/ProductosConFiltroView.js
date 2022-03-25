@@ -7,6 +7,7 @@ import {
   obtenerProductosPorPagina,
   obtenerProductos,
   obtenerProductosPorBusqueda,
+  obtenerNumeroDePaginas,
 } from "../service/productoService";
 function ProductosConFiltroView() {
   const [categorias, setCategorias] = useState([]);
@@ -20,13 +21,14 @@ function ProductosConFiltroView() {
   ///////
   //console.log("hola entraste a productos con filtros");
   const { busqueda } = useParams();
-  //console.log("busqueda", busqueda);
+  // console.log("busqueda", busqueda);
   const [productosBuscados, setProductosBuscados] = useState([]);
-  //console.log("productos buscados", productosBuscados);
+  // console.log("productos buscados", productosBuscados);
 
   const getData = async () => {
     try {
       const totalProductos = await obtenerProductos();
+      const numeroDePaginas = await obtenerNumeroDePaginas(9);
       const prodObtenidosPorPagina = await obtenerProductosPorPagina(
         pagina,
         limite
@@ -35,18 +37,15 @@ function ProductosConFiltroView() {
 
       const productoPorBusqueda = await obtenerProductosPorBusqueda(busqueda);
 
-      setProductosBuscados(productoPorBusqueda);
       setCategorias(catObtenidas);
-      setProductos(prodObtenidosPorPagina);
-      setTodosLosProductos(totalProductos);
+      if (busqueda) {
+        setProductos(productoPorBusqueda);
+      } else {
+        setProductos(prodObtenidosPorPagina);
+        setTodosLosProductos(totalProductos);
+      }
 
-      const totalProduct = totalProductos.length;
-      const prodDelLimite = 8;
-      //console.log("todos los productos", totalProduct);
-      // console.log("limite de productos", prodDelLimite);
-      const totalPaginasCaculadas = Math.ceil(totalProduct / prodDelLimite);
-      //console.log("total paginas calculadas", totalPaginasCaculadas);
-      guardarTotalPaginas(totalPaginasCaculadas);
+      guardarTotalPaginas(numeroDePaginas);
 
       const jumbotron = document.querySelector(".jumbotron");
       jumbotron.scrollIntoView({ behavior: "smooth" });
@@ -57,10 +56,10 @@ function ProductosConFiltroView() {
 
   //filtrar por categoria
   const filtarPorCategoria = (idCategoria) => {
-    /* console.log("entra a filtarPorCategoria");
-    console.log("id de categoria es", idCategoria);
-    console.log("aqui todos los productos", todosLosProductos); */
-    const productosFiltrados = todosLosProductos.filter(
+    // console.log("entra a filtarPorCategoria");
+    // console.log("id de categoria es", idCategoria);
+    // console.log("aqui todos los productos", productos);
+    const productosFiltrados = productos.filter(
       (producto) => producto.categoria_id === idCategoria
     );
     console.log("estos son los productos filtrados", productosFiltrados);
@@ -70,7 +69,7 @@ function ProductosConFiltroView() {
 
   useEffect(() => {
     getData();
-  }, [pagina]);
+  }, [pagina, busqueda]);
   return (
     <div className="container-fluid " style={{ background: "#e8e8e8" }}>
       {/* jumbotron */}

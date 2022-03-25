@@ -33,15 +33,20 @@ function ChekOutView() {
     return null;
   };
   const recibirSubmit = async (data, e) => {
-    //console.log(data);
-
     try {
       let nuevaVenta = {
         ...data,
+        telefono: data.celular,
         coordenadas,
-        productos: carrito,
+        productos: carrito.map((producto) => {
+          return {
+            producto: producto.id,
+            cantidad: producto.cantidad,
+          };
+        }),
         total,
       };
+      console.log("venta", nuevaVenta);
       await guardarVenta(nuevaVenta);
       Swal.fire({
         icon: "success",

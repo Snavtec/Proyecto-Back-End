@@ -1,0 +1,428 @@
+[
+   {
+    "model": "users.user",
+    "pk": 1,
+    "fields": {
+      "password": "pbkdf2_sha256$260000$tAPeMMD1ffDdSh7TsMt5WD$kAfF7zjc9pWwgSsdsOTekMIxQqmSkk0ifMvUoFI69nI=",
+      "last_login": "2022-03-19T00:38:09.614Z",
+      "is_superuser": true,
+      "first_name": "",
+      "last_name": "",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2022-03-19T00:37:53.808Z",
+      "email": "admin@mail.com",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "products.category",
+    "pk": 1,
+    "fields": {
+      "nombre": "Mouse Gamer",
+      "descripcion": "Mejores mouses para gamers y competiciones",
+      "imagen": "categories/photo-1623425484828-7eccb29713a7_O1iDWmO.jpeg",
+      "created_at": "2022-03-19T00:40:02.071Z",
+      "updated_at": "2022-03-19T00:40:02.071Z"
+    }
+  },
+  {
+    "model": "products.category",
+    "pk": 2,
+    "fields": {
+      "nombre": "Teclados Gamers",
+      "descripcion": "Mejores teclados para gamers y competiciones",
+      "imagen": "categories/photo-1633315752119-3b965d22c614.jpeg",
+      "created_at": "2022-03-19T00:40:02.071Z",
+      "updated_at": "2022-03-19T00:40:02.071Z"
+    }
+  },
+  {
+    "model": "products.category",
+    "pk": 3,
+    "fields": {
+      "nombre": "Monitores Gamers",
+      "descripcion": "Sacate el provecho a tu computadora y haz la ventaja contra tus enemigos",
+      "imagen": "categories/photo-1603481588273-2f908a9a7a1b.jpeg",
+      "created_at": "2022-03-19T00:40:02.071Z",
+      "updated_at": "2022-03-19T00:40:02.071Z"
+    }
+  },
+  {
+    "model": "products.category",
+    "pk": 4,
+    "fields": {
+      "nombre": "Audifonos Gamers",
+      "descripcion": "Sonido 7.1 para tener la ventaja en el juego",
+      "imagen": "categories/photo-1585298723682-7115561c51b7.jpeg",
+      "created_at": "2022-03-19T00:40:02.071Z",
+      "updated_at": "2022-03-19T00:40:02.071Z"
+    }
+  },
+  {
+    "model": "products.category",
+    "pk": 5,
+    "fields": {
+      "nombre": "Microfonos Gamers",
+      "descripcion": "Mejores microfonos para gamer y streaming",
+      "imagen": "categories/photo-1489797715492-dbd3bd61c6b5.jpeg",
+      "created_at": "2022-03-19T00:40:02.071Z",
+      "updated_at": "2022-03-19T00:40:02.071Z"
+    }
+  },
+  {
+    "model": "products.category",
+    "pk": 6,
+    "fields": {
+      "nombre": "Webcams Gamers",
+      "descripcion": "Mejores microfonos para gamer y streaming",
+      "imagen": "categories/photo-1626581795188-8efb9a00eeec.jpeg",
+      "created_at": "2022-03-19T00:40:02.071Z",
+      "updated_at": "2022-03-19T00:40:02.071Z"
+    }
+  },
+  {
+    "model": "products.characteristic",
+    "pk": 1,
+    "fields": { "nombre": "Respuesta 1ms" }
+  },
+  {
+    "model": "products.characteristic",
+    "pk": 2,
+    "fields": { "nombre": "Resistente" }
+  },
+  {
+    "model": "products.characteristic",
+    "pk": 3,
+    "fields": { "nombre": "Competitivo" }
+  },
+  {
+    "model": "products.characteristic",
+    "pk": 4,
+    "fields": { "nombre": "Inalambrico" }
+  },
+  {
+    "model": "products.characteristic",
+    "pk": 5,
+    "fields": { "nombre": "Sensor HERO 16K" }
+  },
+  {
+    "model": "products.characteristic",
+    "pk": 6,
+    "fields": { "nombre": "Dpi de 100 a 16,000 para un seguimiento confiable" }
+  },
+  {
+    "model": "products.characteristic",
+    "pk": 7,
+    "fields": { "nombre": "11 botones programables con soporte para comandos personalizados" }
+  },
+  {
+    "model": "products.product",
+    "pk": 1,
+    "fields": {
+      "nombre": "Razer Naga Edition",
+      "descripcion": "Mouse ergonomico para gamers de alta respuesta",
+      "precio": "250.00",
+      "imagen": "products/razer-naga-left-handed-edition-500x500_4HaWu4P.png",
+      "categoria": 1,
+      "created_at": "2022-03-19T00:40:49.452Z",
+      "updated_at": "2022-03-19T00:40:49.452Z",
+      "caracteristicas": [1,2,3]
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 2,
+    "fields": {
+      "nombre": "Razer DeathHadder Essential",
+      "descripcion": "Mouse optico con mas de 6400 de dpi",
+      "precio": "180.00",
+      "imagen": "products/daessential-500x500.png",
+      "categoria": 1,
+      "created_at": "2022-03-19T00:40:49.452Z",
+      "updated_at": "2022-03-19T00:40:49.452Z",
+      "caracteristicas": [1,2,3]
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 3,
+    "fields": {
+      "nombre": "Razer Mamba",
+      "descripcion": "Mouse chroma , customisable y wireless",
+      "precio": "340.00",
+      "imagen": "products/razer-mamba-elite_500x500.png",
+      "categoria": 1,
+      "created_at": "2022-03-19T00:40:49.452Z",
+      "updated_at": "2022-03-19T00:40:49.452Z",
+      "caracteristicas": [1,2,3]
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 4,
+    "fields": {
+      "nombre": "Razer pro click mini",
+      "descripcion": "Mouse silencioso, pequeño adaptable a cualquier tipo de mano",
+      "precio": "220.00",
+      "imagen": "products/razer-pro-mini.jpg",
+      "categoria": 1,
+      "created_at": "2022-03-19T00:40:49.452Z",
+      "updated_at": "2022-03-19T00:40:49.452Z",
+      "caracteristicas": [1]
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 5,
+    "fields": {
+      "nombre": "Razer Lancehead Tournament",
+      "descripcion": "Mouse gamer color rosa , alto sensor de switch , 16000 dpi",
+      "precio": "210.00",
+      "imagen": "products/razer-lancerhead-tournament.jpg",
+      "categoria": 1,
+      "created_at": "2022-03-19T00:40:49.452Z",
+      "updated_at": "2022-03-19T00:40:49.452Z",
+      "caracteristicas": [1,2,3]
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 6,
+    "fields": {
+      "nombre": "Teclado Razer Pro Type Ultra",
+      "descripcion": "Razer Pro Type Ultra - US",
+      "precio": "180.00",
+      "imagen": "products/teclado-razer-pro-type-ultra.png",
+      "categoria": 2,
+      "created_at": "2022-03-19T00:40:49.452Z",
+      "updated_at": "2022-03-19T00:40:49.452Z",
+      "caracteristicas": [1,2,3]
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 7,
+    "fields": {
+      "nombre": "Teclado Razer BlackWidow V3 - Green",
+      "descripcion": "Doubleshot ABS Keycaps",
+      "precio": "240.00",
+      "imagen": "products/teclado-razer-blackwidow-v3-green.png",
+      "categoria": 2,
+      "created_at": "2022-03-19T00:40:49.452Z",
+      "updated_at": "2022-03-19T00:40:49.452Z",
+      "caracteristicas": [1,2,3]
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 8,
+    "fields": {
+      "nombre": "Teclado Razer Huntsman V2 - Clicky Optical",
+      "descripcion": "Ergonomic wrist rest",
+      "precio": "280.00",
+      "imagen": "products/teclado-razer-huntsman-v2.png",
+      "categoria": 2,
+      "created_at": "2022-03-19T00:40:49.452Z",
+      "updated_at": "2022-03-19T00:40:49.452Z",
+      "caracteristicas": [1,2,3]
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 9,
+    "fields": {
+      "nombre": "Teclado Razer BlackWidow V3 - Green Switch - US - Quartz",
+      "descripcion": "Razer™ Mechanical Switches (Green)",
+      "precio": "300.00",
+      "imagen": "products/teclado-razer-blackwidow-v3-green-quartz.png",
+      "categoria": 2,
+      "created_at": "2022-03-19T00:40:49.452Z",
+      "updated_at": "2022-03-19T00:40:49.452Z",
+      "caracteristicas": [1,2,3]
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 10,
+    "fields": {
+      "nombre": "Teclado Razer Pro Type - US",
+      "descripcion": "Razer™ Mechanical Switches (Orange)",
+      "precio": "250.00",
+      "imagen": "products/teclado-razer-pro-type.png",
+      "categoria": 2,
+      "created_at": "2022-03-19T00:40:49.452Z",
+      "updated_at": "2022-03-19T00:40:49.452Z",
+      "caracteristicas": [1,2,3]
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 11,
+    "fields": {
+      "nombre": "Teros Gaming 144hz",
+      "descripcion": "Monitor gamer para gamers",
+      "precio": "250.00",
+      "imagen": "products/monitor-teros-gaming-144hz.png",
+      "categoria": 3,
+      "created_at": "2022-03-19T00:40:49.452Z",
+      "updated_at": "2022-03-19T00:40:49.452Z",
+      "caracteristicas": [1,2,3]
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 12,
+    "fields": {
+      "nombre": "Logitech G502 Lightspeed Wireless",
+      "descripcion": "Mouse gamer wireless color negro RGB - 16000 dpi",
+      "precio": "439.90",
+      "imagen": "products/monitor-teros-gaming-144hz.png",
+      "categoria": 1,
+      "created_at": "2022-03-19T00:40:49.452Z",
+      "updated_at": "2022-03-19T00:40:49.452Z",
+      "caracteristicas": [5,6,7]
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 13,
+    "fields": {
+      "nombre": "Redragon KUMARA K552 RGB",
+      "descripcion": "Black RGB Backlit",
+      "precio": "180.00",
+      "imagen": "products/teclado-redragon-kumara.jpg",
+      "categoria": 2,
+      "created_at": "2022-03-19T00:40:49.452Z",
+      "updated_at": "2022-03-19T00:40:49.452Z",
+      "caracteristicas": [5,6]
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 14,
+    "fields": {
+      "nombre": "HYPERX ALLOY CORE RGB",
+      "descripcion": "Black LED-RGB",
+      "precio": "670.00",
+      "imagen": "products/teclado-hyperx-rgb.jpg",
+      "categoria": 2,
+      "created_at": "2022-03-19T00:40:49.452Z",
+      "updated_at": "2022-03-19T00:40:49.452Z",
+      "caracteristicas": [5,6]
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 15,
+    "fields": {
+      "nombre": "Razer Raptor 27''",
+      "descripcion": "QHD (2560 x 1440) - 165Hz THX",
+      "precio": "2500.00",
+      "imagen": "products/monitor-razer-raptor.png",
+      "categoria": 3,
+      "created_at": "2022-03-19T00:40:49.452Z",
+      "updated_at": "2022-03-19T00:40:49.452Z",
+      "caracteristicas": [5,6]
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 16,
+    "fields": {
+      "nombre": "MONITOR TEROS TE-3170N",
+      "descripcion": "Monitor gamer para gamers",
+      "precio": "250.00",
+      "imagen": "products/monitor-teros-te-3170n-27-curvo.jpg",
+      "categoria": 3,
+      "created_at": "2022-03-19T00:40:49.452Z",
+      "updated_at": "2022-03-19T00:40:49.452Z",
+      "caracteristicas": [5,6]
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 17,
+    "fields": {
+      "nombre": "Samsung Odyssey Neo G9",
+      "descripcion": "Dual QuadHD 1000R curve Mini LED - 240Hz",
+      "precio": "2500.00",
+      "imagen": "products/samsung-odyssey-neo-g9-blogroll-1628088383960.jpg",
+      "categoria": 3,
+      "created_at": "2022-03-19T00:40:49.452Z",
+      "updated_at": "2022-03-19T00:40:49.452Z",
+      "caracteristicas": [5,6]
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 18,
+    "fields": {
+      "nombre": "LG UltraGear",
+      "descripcion": "Pantalla Nano IPS 38'' 21.9 curvada WQHD+ (3840 X 1600) - 144 Hz/ 175 Hz",
+      "precio": "2076.00",
+      "imagen": "products/MNT-38GN950-09-02-2-Sphere-Lighting-Video-Sync.jpg",
+      "categoria": 3,
+      "created_at": "2022-03-19T00:40:49.452Z",
+      "updated_at": "2022-03-19T00:40:49.452Z",
+      "caracteristicas": [5,6]
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 19,
+    "fields": {
+      "nombre": "Razer Barracuda X",
+      "descripcion": "HYBRID AUDIO FREEDOM. 4-IN-1 WIRELESS GAMING.",
+      "precio": "570.00",
+      "imagen": "products/barracuda-x-quartz-mercury_hero-desktop.jpg",
+      "categoria": 4,
+      "created_at": "2022-03-19T00:40:49.452Z",
+      "updated_at": "2022-03-19T00:40:49.452Z",
+      "caracteristicas": [5,6]
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 20,
+    "fields": {
+      "nombre": "HyperX Cloud MIX",
+      "descripcion": "Auriculares para juegos con cable + Bluetooth, Game and Go, micrófono desmontable, Signature HyperX Comfort, ligeros",
+      "precio": "670.00",
+      "imagen": "products/hyperx-cloud-2.jpg",
+      "categoria": 4,
+      "created_at": "2022-03-19T00:40:49.452Z",
+      "updated_at": "2022-03-19T00:40:49.452Z",
+      "caracteristicas": [5,6]
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 20,
+    "fields": {
+      "nombre": "Blue Yeti",
+      "descripcion": "You can record audio in cardioid, stereo, omnidirectional or bidirectional modes.",
+      "precio": "270.00",
+      "imagen": "products/microphone-blue-yeti.jpg",
+      "categoria": 5,
+      "created_at": "2022-03-19T00:40:49.452Z",
+      "updated_at": "2022-03-19T00:40:49.452Z",
+      "caracteristicas": [5,6]
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 21,
+    "fields": {
+      "nombre": "HyperX SoloCast",
+      "descripcion": "The HyperX SoloCast’s recording quality is a whole lot better than it should be for a $59 USB microphone.",
+      "precio": "560.00",
+      "imagen": "products/microphone-hyperx-solocast.jpg",
+      "categoria": 5,
+      "created_at": "2022-03-19T00:40:49.452Z",
+      "updated_at": "2022-03-19T00:40:49.452Z",
+      "caracteristicas": [5,6]
+    }
+  }
+]

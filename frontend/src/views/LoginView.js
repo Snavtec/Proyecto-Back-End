@@ -3,18 +3,35 @@ import { AuthContext } from "../context/authContext";
 import { Button, Form } from "react-bootstrap";
 import LoginImg from "../assets/login.svg";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
-function LoginView() {
-  const { signIn } = useContext(AuthContext);
+import { Link, useNavigate } from "react-router-dom";
+import { login, getUserProfile } from "../service/authService";
 
+function LoginView() {
+  const { signIn, customSignIn } = useContext(AuthContext);
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
 
-  const recibirSubmit = (data) => {
+  const recibirSubmit = async (data) => {
     console.log(data);
+
+    try {
+      const creds = await login(data);
+      console.log("user tokens", creds);
+      // Save tokens to localStorage
+      localStorage.setItem("accessToken", creds.access);
+      localStorage.setItem("refreshToken", creds.refresh);
+      // get user profile and set it to context
+      const user = await getUserProfile();
+      await customSignIn(user);
+      // redirect to products
+      navigate("/productosfiltros");
+    } catch (e) {
+      console.log(e);
+    }
   };
 
   return (
@@ -32,8 +49,8 @@ function LoginView() {
               <Form.Label>Usuario</Form.Label>
               <Form.Control
                 type="text"
-                placeholder="Ingrese un usuario"
-                {...register("usuario", { required: true })}
+                placeholder="Ingrese su correo"
+                {...register("email", { required: true })}
               />
               {errors.usuario && (
                 <small className="text-danger">Este Campo es obligatorio</small>

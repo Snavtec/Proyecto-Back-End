@@ -1,12 +1,10 @@
-import axios from "axios";
-
-const URL = `${process.env.REACT_APP_WEBSITE_NAME}categorias`; //equivale a obtener las categorias
+import { URL } from "./axiosService";
 
 //buscar todos o filtrar
 const obtenerCategorias = async () => {
   try {
-    let { data } = await axios.get(URL);
-    return data;
+    let { data } = await URL.get("categorias");
+    return data.results;
   } catch (error) {
     throw error;
   }
